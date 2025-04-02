@@ -297,7 +297,7 @@ body.light .social-icon:hover {
   align-items: center;
   justify-content: space-around;
   gap: -400px; 
-  padding: 300px 20px;
+  padding: 100px 20px;
   flex-wrap: wrap;
 }
 
