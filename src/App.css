@@ -5,9 +5,9 @@ body {
 }
 :root {
   --cursor-color: white;
-  --tech-icon-color: #669593; /* default for dark/star */
+  --tech-icon-color: #669593; /* default for dark and star */
 }
-/* ------------------- Dark Mode / Star Mode -------------------------- */
+/* ------------------- Dark Mode and Star Mode -------------------------- */
 body.dark, body.dark .header{
   background-color: #111c1c;
   color: white;
@@ -152,7 +152,7 @@ body.star, body.star .header{
   font-size: 28px;
   cursor: pointer;
   transition: color 0.3s;
-} */
+} 
 
 
 .material-icons.toggleButton {
@@ -248,7 +248,7 @@ body.light .nav-left a:hover {
   transition: color 0.3s ease;
 }
 
-/* For dark/star mode */
+/* For dark and star mode */
 body.dark .social-icon, body.star .social-icon  {
   color: #669593;
 }
@@ -553,5 +553,7 @@ body.dark .project-card-content #date, body.star .project-card-content #date{
   text-align: center;
   font-size: 12px;
 }
+
+
 
 
