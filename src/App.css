@@ -119,20 +119,19 @@ body.star, body.star .header{
 
   #home {
     text-align: center;
-    margin: 50px;
-    padding-top: 50px;
+    margin: 50px 30px;
+    padding-top: 10px -40px;
 
   }
   #home h1 {
-    
-    font-size: 50px;
+    font-size: 32px;
   }
   #home h2 {
-    font-size: 30px;
+    font-size: 18px;
   }
   #home h3 {
     margin: 5px;
-    font-size: 20px;
+    font-size: 15px;
   }
   #empty{
     margin: 150px;
@@ -170,10 +169,10 @@ body.star .header .toggleButton:hover {
 }
 
 .toggleButton.light {
-  color: #97ADBB;
+  color: #97ADBB !important;
 }
 .toggleButton.toggleButton.light:hover{
-  color:#414E5F;
+  color:#414E5F !important;
 }
 
 /* ----------------------------- Sticky header container -------------------- */
@@ -232,15 +231,32 @@ body.light .nav-left a:hover {
 }
 
 @media (max-width: 768px) {
-
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem; /* optional: add some padding */
+  }
   .nav-left a {
     text-decoration: none;
     color: inherit;
-    font-size: 15px;
+    font-size: 13px;
     transition: color 0.3s ease;
   }
+  .nav-left {
+    order: 1;
+    width: 100%;
+    text-align: center; 
+    margin-bottom: 0.5rem; 
+  }
+
+  .nav-right {
+    order: 2;
+    margin-top: 1rem; 
+  }
+  
   
 }
+
 /* ----------------------------- Social Icons -------------------- */
 /* Social icon styling done in Header.js */
 .social-icon {
@@ -319,13 +335,17 @@ body.light .social-icon:hover {
   }
   
   .about-me {
-    margin: 10px auto;
-    max-width: 90%;
+    margin: 45px auto;
+    max-width:95%;
+    
+  }
+
+  .about-me p{
+    font-size: 15px;
   }
   .photo-frame {
     display: none;
   }
-  
 }
 /* ---------------------------------- Tech Section Container --------------------------------------- */
 
@@ -399,6 +419,18 @@ body.light .tech-icon:hover{
 @media (max-width: 768px) {
   .tech-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .tech-section{
+    padding: 30px;
+    margin: 6px;
+  }
+  .tech-section p{
+    font-size: 15px;
+  }
+
+  .tech-item::after {
+    bottom: -10px;    
+    left: -5%;
   }
 }
 
