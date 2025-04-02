@@ -99,7 +99,7 @@ body.star, body.star .header{
 /* Animation of letter by letter */
 @keyframes typing {
   from { width: 0; }
-  to { width: 11ch; }
+  to { width: 12.4ch; }
 }
 @keyframes blink-caret {
   50% { border-color: transparent; }
@@ -297,7 +297,7 @@ body.light .social-icon:hover {
   align-items: center;
   justify-content: space-around;
   gap: -400px; 
-  padding: 60px 20px;
+  padding: 100px 20px;
   flex-wrap: wrap;
 }
 
@@ -353,7 +353,7 @@ body.light .social-icon:hover {
   text-align: center;
   padding: 40px 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 100px auto;
   color: inherit;
 }
 
@@ -438,7 +438,7 @@ body.light .tech-icon:hover{
 .project-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 150px 20px;
 
 }
 
@@ -585,7 +585,5 @@ body.dark .project-card-content #date, body.star .project-card-content #date{
   text-align: center;
   font-size: 12px;
 }
-
-
 
 
