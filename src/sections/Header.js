@@ -54,7 +54,7 @@ const Header = ({ toggleTheme, currentTheme }) => {
         </i>
         {/* LinkedIn icon */}
         <a
-          href="https://www.linkedin.com/in/sirat-chowdhury-b999781a7/"
+          href="https://www.linkedin.com/in/syeda-chowdhury-b999781a7/"
           target="_blank"
           rel="noopener noreferrer"
           title="LinkedIn"
