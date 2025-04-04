@@ -19,8 +19,8 @@ const projectData = [
     description:
       'My website that you are currently on.',
     techStack: ['React.js', 'JavaScript', 'CSS', 'HTML', 'UI/UX'],
-    githubLink: 'https://github.com/SiratC/DropChat',
-    liveLink: 'https://drop-chat-fttxtqswx-sirat-chowdhurys-projects.vercel.app',
+    githubLink: 'https://github.com/SiratC/portfolio',
+    liveLink: 'https://portfolio-git-main-sirat-chowdhurys-projects.vercel.app',
     imageUrl: '/images/img4.png'
   },
   {
@@ -100,3 +100,4 @@ const Project = () => {
 };
 
 export default Project;
+
