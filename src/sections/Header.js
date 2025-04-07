@@ -39,7 +39,7 @@ const Header = ({ toggleTheme, currentTheme }) => {
           <h1><a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a></h1>
           </li>
           <li>
-          <h1> <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" title="Resume">Resume</a></h1>
+          <h1> <a href="/Resume-Portfolio.pdf" target="_blank" rel="noopener noreferrer" title="Resume">Resume</a></h1>
           </li>
         </ul>
       </nav>
