@@ -8,7 +8,7 @@ const projectData = [
     date: '2024-06-30 - Present',
     description:
       'DropChat offers a seamless, real-time multi-user chat experience where users can connect and communicate with unique usernames, enhancing social interaction.',
-    techStack: ['Node.js', 'JavaScript', 'CSS', 'HTML', 'UI/UX'],
+    techStack: ['Node.js', 'JavaScript', 'HTML/CSS'],
     githubLink: 'https://github.com/SiratC/DropChat',
     liveLink: 'https://drop-chat-fttxtqswx-sirat-chowdhurys-projects.vercel.app',
     imageUrl: '/images/img2.png'
@@ -18,7 +18,7 @@ const projectData = [
     date: '2025-03-29 - Present',
     description:
       'My website that you are currently on.',
-    techStack: ['React.js', 'JavaScript', 'CSS', 'HTML', 'UI/UX'],
+    techStack: ['React.js', 'JavaScript', 'HTML/CSS'],
     githubLink: 'https://github.com/SiratC/portfolio',
     liveLink: 'https://portfolio-git-main-sirat-chowdhurys-projects.vercel.app',
     imageUrl: '/images/img4.png'
@@ -33,11 +33,21 @@ const projectData = [
     imageUrl: '/images/img3.png'
   },
   {
+    title: 'AI-Powered Privacy Summarizer',
+    date: '2025-03-12 - 2025-04-26',
+    description:
+      'Instantly turn long, jargon-filled privacy and terms pages into clear, concise summaries with AI-powered Privacy Policy Summarizer.',
+    techStack: ['Node.js (Next.js)', 'JavaScript', 'OpenAI API', 'Chrome Extension API', 'HTML/CSS'],
+    githubLink: 'https://github.com/SiratC/Privacy-Summarizer-AI-Powered-Extension',
+    liveLink: 'https://chromewebstore.google.com/detail/ai-powered-privacy-summar/demdiinghgipfggmhpcgdbjajamindma?authuser=0&hl=en',
+    imageUrl: '/images/img5.png'
+  },
+  {
     title: 'Dark Mode Extension',
     date: '2024-12-18 - 2024-12-19',
     description:
       'This extension provides a simple way for users to toggle between dark and light modes, enhancing readability and reducing eye strain during prolonged browsing sessions.',
-    techStack: ['JavaScript', 'Chrome Extension API'],
+    techStack: ['JavaScript', 'Chrome Extension API', 'HTML/CSS'],
     githubLink: 'https://github.com/SiratC/Dark-Mode-Extension',
     liveLink: 'https://chromewebstore.google.com/detail/dark-mode-toggle/eohginahofdggkkpjimolnppgjchaifn',
     imageUrl: '/images/img1.png'
