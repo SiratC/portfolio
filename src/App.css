@@ -99,7 +99,7 @@ body.star, body.star .header{
 /* Animation of letter by letter */
 @keyframes typing {
   from { width: 0; }
-  to { width: 10.9ch; }
+  to { width: 11.6ch; }
 }
 @keyframes blink-caret {
   50% { border-color: transparent; }
