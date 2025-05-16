@@ -8,7 +8,7 @@ import Tech from './sections/Tech';
 import Project from './sections/Project';
 import Footer from './sections/Footer';
 import LastUpdated from './sections/LastUpdated';
-import ScrollToTop from './sections/ScrollToTop';
+
 
 
 const themes = ['star', 'dark', 'light'];
@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-         <ScrollToTop />
+
       <Header toggleTheme={toggleTheme} currentTheme={theme} />
       <section id="home"><Home /></section>
        <section id="about-me"><About /></section>
