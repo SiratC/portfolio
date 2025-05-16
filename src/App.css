@@ -99,7 +99,7 @@ body.star, body.star .header{
 /* Animation of letter by letter */
 @keyframes typing {
   from { width: 0; }
-  to { width: 12.4ch; }
+  to { width: 11.6ch; }
 }
 @keyframes blink-caret {
   50% { border-color: transparent; }
@@ -128,15 +128,16 @@ body.star, body.star .header{
   }
   #home h2 {
     font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: -25px;
   }
   #home h3 {
-    margin: 5px;
+    margin: 30px;
     font-size: 15px;
   }
   #empty{
     margin: 150px;
   }
-  
 }
 
 /* ------------------- ThemeSwitcher -------------------------- */
