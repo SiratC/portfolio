@@ -63,7 +63,7 @@ print(is_hireable(coder))`;
           font-family: 'Fira Code', Consolas, Menlo, monospace;
           color: #93a1a1;
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-          max-width: 42vw;
+          max-width: 50vw;
           margin: 2rem auto;
           overflow-x: auto;
         }
@@ -90,10 +90,8 @@ print(is_hireable(coder))`;
         @media (max-width: 768px) {
 
           .code-card {
-
             font-size: 8.5px;
             max-width: 60vw;
-
           }
           
         }
