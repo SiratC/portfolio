@@ -4,18 +4,18 @@ import {tomorrow} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 
 const Home = () => {
-  const codeSnippet = `coder = { 
-  "name": "Syeda Chowdhury",
-  "skills": ["Python", "Java", "C", "Node.js", "React", "API Integration"],
-  "hard_worker": True,
-  "quick_learner": True,
-  "problem_solver": True,
-}
-
-def is_hireable(c):
-    return c["hard_worker"] and c["problem_solver"] and len(c["skills"]) >= 6
-
-print(is_hireable(coder))`;
+  const codeSnippet = `public class Main {
+      public static void main(String[] args) {
+          String name = "Syeda Chowdhury";
+          String[] skills = {"Java", "Python", "C", "Node.js",
+              "React", "API Integration"};
+          boolean hardWorker = true, quickLearner = true, problemSolver = true;
+          boolean isHireable = hardWorker && problemSolver 
+                            && skills.length >= 6;
+  
+          System.out.println(isHireable);  
+      }
+  }`;
 
   return (
     <section id="home">
