@@ -8,12 +8,13 @@ const About = () => {
         About Me
         </h2>
         <p>
-        I'm a full-time Computer Science student seeking a Fall 2025 co-op in Software Development, 
-        Cybersecurity, Data Science, Cloud Engineering, DevOps, or UI/UX Design. I'm passionate about 
-        innovative technologies—especially AI—and I balance my academics with part-time work and extracurricular 
-        projects that allow me to constantly learn and create. Beyond my technical pursuits, I also enjoy making digital art, 
-        which fuels my creativity. These pursuits not only add depth to 
-        my life but also drive innovative and creative thinking in my personal projects.
+    Hey, I’m a full-time Computer Science student looking for a Fall 2025 co-op in Software Development, 
+    Cybersecurity, Data Science, Cloud Engineering, DevOps, or UI/UX Design. 
+    I’m passionate about AI and currently diving deep into cybersecurity through platforms 
+    like TryHackMe and working toward certifications.
+    Outside of school, I work part-time and build side projects to keep growing. 
+    I also make digital art, which keeps my creativity flowing and 
+    gives me a fresh lens on tech.
         </p>
       </div>
       <div className="photo-frame">
