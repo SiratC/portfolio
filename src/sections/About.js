@@ -14,7 +14,7 @@ const About = () => {
     like TryHackMe and working toward certifications.
     Outside of school, I work part-time and build side projects to keep growing. 
     I also make digital art, which keeps my creativity flowing and 
-    gives me a fresh lens on tech. Scroll down to see some of my projects!
+    gives me a fresh lens on tech. 
         </p>
       </div>
       <div className="photo-frame">
