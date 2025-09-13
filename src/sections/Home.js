@@ -7,11 +7,11 @@ const Home = () => {
   const codeSnippet = `public class Main {
       public static void main(String[] args) {
           String name = "Syeda Chowdhury";
-          String[] skills = {"Java", "Python", "C", "Node.js",
+          String[] skills = {"Java", "Python", "C",
               "React", "API Integration"};
           boolean hardWorker = true, quickLearner = true, problemSolver = true;
           boolean isHireable = hardWorker && problemSolver 
-                            && skills.length >= 6;
+                            && skills.length >= 5;
   
           System.out.println(isHireable);  
       }
