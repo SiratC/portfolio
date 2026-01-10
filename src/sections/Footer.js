@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div id="footer" className="footer-section">
       <p className='footerp'>Built and designed by Syeda Chowdhury. <br />
-      All rights reserved. © 2025</p>
+      All rights reserved. © 2026</p>
     </div>
   );
 };
