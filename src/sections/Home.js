@@ -1,0 +1,158 @@
+import React, { useState, useEffect } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import {tomorrow} from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
+const FULL_TEXT = 'Hi! Syeda here.';
+const TYPING_SPEED = 100; // ms per character
+
+const Home = () => {
+  const [displayed, setDisplayed] = useState('');
+  const [showCursor, setShowCursor] = useState(true);
+  const [doneTyping, setDoneTyping] = useState(false);
+
+  // Typewriter effect
+  useEffect(() => {
+    if (displayed.length < FULL_TEXT.length) {
+      const timeout = setTimeout(() => {
+        setDisplayed(FULL_TEXT.slice(0, displayed.length + 1));
+      }, TYPING_SPEED);
+      return () => clearTimeout(timeout);
+    } else {
+      setDoneTyping(true);
+    }
+  }, [displayed]);
+
+  // Blinking cursor after typing finishes
+  useEffect(() => {
+    if (!doneTyping) return;
+    const interval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 530);
+    return () => clearInterval(interval);
+  }, [doneTyping]);
+
+  // Highlight "Syeda" in the displayed string
+  const renderText = () => {
+    const syedaStart = FULL_TEXT.indexOf('Syeda');
+    const syedaEnd = syedaStart + 'Syeda'.length;
+    const len = displayed.length;
+
+    if (len <= syedaStart) {
+      // Haven't reached "Syeda" yet
+      return <>{displayed}</>;
+    } else if (len <= syedaEnd) {
+      // Mid-way through "Syeda"
+      return (
+        <>
+          {displayed.slice(0, syedaStart)}
+          <span className="homeText">{displayed.slice(syedaStart)}</span>
+        </>
+      );
+    } else {
+      // Past "Syeda"
+      return (
+        <>
+          {displayed.slice(0, syedaStart)}
+          <span className="homeText">{displayed.slice(syedaStart, syedaEnd)}</span>
+          {displayed.slice(syedaEnd)}
+        </>
+      );
+    }
+  };
+
+  const codeSnippet = `public class Main {
+      public static void main(String[] args) {
+          String name = "Syeda Chowdhury";
+          String[] skills = {"Java", "Python", "C",
+              "React", "API Integration"};
+          boolean hardWorker = true, quickLearner = true, problemSolver = true;
+          boolean isHireable = hardWorker && problemSolver 
+                            && skills.length >= 5;
+  
+          System.out.println(isHireable);  
+      }
+  }`;
+
+  return (
+    <section id="home">
+      <h1>
+        {renderText()}
+        <span className={`type-cursor ${doneTyping && !showCursor ? 'type-cursor--hidden' : ''}`} aria-hidden="true" />
+      </h1>
+      <h2>3rd year CS @ York University</h2>
+      <h3>
+        I like to learn about new technologies and create stuff
+        <br />
+        that could potentially help users around the world.
+      </h3>
+
+      <div className="code-card">
+        <div className="window-bar">
+          <span className="circle red" />
+          <span className="circle yellow" />
+          <span className="circle green" />
+        </div>
+
+        <SyntaxHighlighter
+          language="python"
+          style={tomorrow}
+          wrapLines={true}
+          lineProps={{
+            style: {
+              display: 'block',
+              backgroundColor: 'none',
+            }
+          }}
+          customStyle={{
+            background: '',
+          }}
+        >
+          {codeSnippet}
+        </SyntaxHighlighter>
+      </div>
+
+      <style jsx>{`
+        .code-card {
+          text-align: left;
+          background: #002b36;
+          border-radius: 12px;
+          padding: 24px;
+          font-size: 15px;
+          font-family: 'Fira Code', Consolas, Menlo, monospace;
+          color: #93a1a1;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+          max-width: 50vw;
+          margin: 2rem auto;
+          overflow-x: auto;
+        }
+        .window-bar {
+          display: flex;
+          gap: 8px;
+          margin-bottom: 16px;
+        }
+        .circle {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          display: inline-block;
+        }
+        .red { background: #E38E8E; }
+        .yellow { background: #FFB545; }
+        .green { background: #BDD9BD; }
+        @media (max-width: 768px) {
+          .code-card {
+            font-size: 8.5px;
+            max-width: 60vw;
+          }
+        }
+        :global(.react-syntax-highlighter) {
+          margin: 0 !important;
+        }
+      `}</style>
+
+      <div id="empty"></div>
+    </section>
+  );
+};
+
+export default Home;
