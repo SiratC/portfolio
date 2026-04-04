@@ -9,8 +9,7 @@ const About = () => {
         </h2>
         <div className="section-divider"></div>
         <p>
-    Hi! I’m a full-time Computer Science student looking for a Winter 2026 Co-op/Internship in Software Development, 
-    Cybersecurity, Data Science, Cloud Engineering, DevOps, or UI/UX Design. 
+    Hi! I’m a full-time Computer Science student currently working at RBC as an Automation Analyst co-op for 8 months.
     I’m passionate about AI and currently diving deep into cybersecurity through platforms 
     like TryHackMe and working toward certifications.
     Outside of school, I work part-time and build side projects to keep growing. 
