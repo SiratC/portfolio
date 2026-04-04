@@ -19,7 +19,7 @@ const About = () => {
         </p>
       </div>
       <div className="photo-frame">
-        <img src="/images/myImage.png" alt="Photo" />
+        <img src="/images/myImage.png" alt="Syeda Chowdhury" />
       </div>
       <div id="empty"></div>
     </section>
