@@ -764,10 +764,16 @@ body.light .work-card__role {
   font-weight: 600;
   padding: 2px 9px;
   border-radius: 20px;
-  background: linear-gradient(135deg, #00a3e0, #0078a8);
-  color: #fff;
+  background: transparent;
+  border: 1px solid #669593;
+  color: #669593;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+
+body.light .work-badge {
+  border-color: #69889D;
+  color: #69889D;
 }
 
 /* Meta info (company, period, location) */
