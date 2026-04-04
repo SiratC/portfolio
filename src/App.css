@@ -204,26 +204,34 @@ body.star .header .toggleButton:hover {
   position: fixed;
   top: 0;
   left: 0;
-  width: 98%;
-  padding: 10px 20px;
+  width: 100%;
+  padding: 10px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  box-sizing: border-box;
   box-shadow: 0 1px 0 var(--section-divider);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 body.dark .header, body.star .header {
-  background-color: rgba(13, 23, 23, 0.85);
+  background-color: rgba(13, 23, 23, 0.9);
 }
 
 body.light .header {
-  background-color: rgba(250, 246, 242, 0.88);
+  background-color: rgba(250, 246, 242, 0.92);
 }
 
-.nav-left ul {
+.header-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ---- Desktop nav ---- */
+.nav-desktop ul {
   list-style: none;
   display: flex;
   gap: 20px;
@@ -232,14 +240,12 @@ body.light .header {
   align-items: center;
 }
 
-
 .header .nav-left h1 {
   font-size: 18px; 
   margin: 0;
   line-height: 1;
 }
 
-/* Icons on the left */
 .nav-left a {
   text-decoration: none;
   color: inherit;
@@ -247,48 +253,113 @@ body.light .header {
   transition: color 0.3s ease;
 }
 
-/* Icons on the right */
 .nav-right {
   display: flex;
   gap: 15px;
-  margin: 5px;
+  margin: 0;
   align-items: center;
 }
-/* for light */
-body.light .nav-left a:hover {
-  color: #414E5F;
+
+body.light .nav-left a:hover { color: #414E5F; }
+.nav-left a:hover { color: white; }
+
+/* ---- Hamburger button ---- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
 }
 
-/* for dark and star */
-.nav-left a:hover {
-  color: white;
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: #669593;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
 }
 
+/* Animate to X when open */
+.hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger--open span:nth-child(2) { opacity: 0; }
+.hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+body.light .hamburger span { background: #69889D; }
+
+/* ---- Mobile dropdown nav ---- */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+body.dark .nav-mobile, body.star .nav-mobile {
+  background-color: rgba(13, 23, 23, 0.97);
+}
+body.light .nav-mobile {
+  background-color: rgba(250, 246, 242, 0.97);
+}
+
+.nav-mobile--open {
+  max-height: 400px;
+  padding: 12px 24px 20px;
+}
+
+.nav-mobile ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-mobile ul li a {
+  display: block;
+  text-decoration: none;
+  color: #669593;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--section-divider);
+  transition: color 0.2s ease;
+}
+
+.nav-mobile ul li:last-child a { border-bottom: none; }
+
+.nav-mobile ul li a:hover { color: white; }
+body.light .nav-mobile ul li a { color: #69889D; }
+body.light .nav-mobile ul li a:hover { color: #414E5F; }
+
+/* ---- Mobile breakpoint ---- */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem; /* optional: add some padding */
-  }
-  .nav-left a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 13px;
-    transition: color 0.3s ease;
-  }
-  .nav-left {
-    order: 1;
-    width: 100%;
-    text-align: center; 
-    margin-bottom: 0.5rem; 
-  }
+  .nav-desktop { display: none; }
+  .nav-mobile  { display: block; }
+  .hamburger   { display: flex; }
 
   .nav-right {
-    order: 2;
-    margin-top: 1rem; 
+    gap: 12px;
   }
-  
-  
+
+  .social-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
 }
 
 /* ----------------------------- Social Icons -------------------- */
@@ -314,17 +385,6 @@ body.light .social-icon:hover {
   color: #414E5F;
 }
 
-
-@media (max-width: 768px) {
-
-  .social-icon {
-    fill: currentColor;
-    transition: color 0.3s ease;
-    margin: 0px;
-    margin-right: 12px;
-  }
-  
-}
 /* ------------------- About Section Styles -------------------------- */
 .about-me-section {
   display: flex;

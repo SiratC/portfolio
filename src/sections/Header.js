@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as LinkedinIcon } from '../assets/linkedin.svg';
 import { ReactComponent as GithubIcon } from '../assets/github.svg';
 
 const Header = ({ toggleTheme, currentTheme }) => {
-  // When a navigation link is clicked, the target selection is saved in localStorage 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
+    setMenuOpen(false);
     localStorage.setItem('currentSection', targetId);
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
@@ -13,41 +15,37 @@ const Header = ({ toggleTheme, currentTheme }) => {
     }
   };
 
+  const navLinks = [
+    { label: 'Home',       id: 'home' },
+    { label: 'About Me',   id: 'about-me' },
+    { label: 'Skills',     id: 'skills' },
+    { label: 'Projects',   id: 'projects' },
+    { label: 'Experience', id: 'experience' },
+  ];
+
   return (
     <header className="header">
-      <nav className="nav-left">
+      {/* Logo */}
+      <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="header-logo">
+        <img src="/logo.png" alt="Syeda Chowdhury Logo" style={{ height: '22px', width: 'auto' }} />
+      </a>
+
+      {/* Desktop nav */}
+      <nav className="nav-left nav-desktop">
         <ul>
-        <li>
-            <a href="#home" onClick={(e) => handleNavClick(e, 'home')}>
-              <img 
-                src="/logo.png" 
-                alt="Syeda Chowdhury Logo"  style={{ height: '20px', width: 'auto' }}
-                className="logo" 
-              />
-            </a>
-          </li>
+          {navLinks.map(({ label, id }) => (
+            <li key={id}>
+              <h1><a href={`#${id}`} onClick={(e) => handleNavClick(e, id)}>{label}</a></h1>
+            </li>
+          ))}
           <li>
-            <h1><a href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></h1>
-          </li>
-          <li>
-          <h1> <a href="#about" onClick={(e) => handleNavClick(e, 'about-me')}>About Me</a></h1>
-          </li>
-          <li>
-          <h1> <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a></h1>
-          </li>
-          <li>
-          <h1><a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a></h1>
-          </li>
-          <li>
-          <h1><a href="#experience" onClick={(e) => handleNavClick(e, 'experience')}>Experience</a></h1>
-          </li>
-          <li>
-          <h1> <a href="/Resume-Portfolio.pdf" target="_blank" rel="noopener noreferrer" title="Resume">Resume</a></h1>
+            <h1><a href="/Resume-Portfolio.pdf" target="_blank" rel="noopener noreferrer">Resume</a></h1>
           </li>
         </ul>
       </nav>
+
+      {/* Right side: icons + hamburger */}
       <div className="nav-right">
-        {/* Palette icon for theme toggling */}
         <i
           onClick={toggleTheme}
           className={`material-icons toggleButton ${currentTheme}`}
@@ -55,25 +53,38 @@ const Header = ({ toggleTheme, currentTheme }) => {
         >
           palette
         </i>
-        {/* LinkedIn icon */}
-        <a
-          href="https://www.linkedin.com/in/syeda-chowdhury-b999781a7/"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LinkedIn"
-        >
+        <a href="https://www.linkedin.com/in/syeda-chowdhury-b999781a7/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
           <LinkedinIcon className="social-icon" width="29" height="29" />
         </a>
-        {/* GitHub icon */}
-        <a
-          href="https://github.com/SiratC"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub"
-        >
-          <GithubIcon className="social-icon" width="28" height="28"/>
+        <a href="https://github.com/SiratC" target="_blank" rel="noopener noreferrer" title="GitHub">
+          <GithubIcon className="social-icon" width="28" height="28" />
         </a>
+
+        {/* Hamburger — mobile only */}
+        <button
+          className={`hamburger ${menuOpen ? 'hamburger--open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
+
+      {/* Mobile dropdown */}
+      <nav className={`nav-mobile ${menuOpen ? 'nav-mobile--open' : ''}`}>
+        <ul>
+          {navLinks.map(({ label, id }) => (
+            <li key={id}>
+              <a href={`#${id}`} onClick={(e) => handleNavClick(e, id)}>{label}</a>
+            </li>
+          ))}
+          <li>
+            <a href="/Resume-Portfolio.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };
