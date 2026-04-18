@@ -1,3 +1,97 @@
+/* ======================================================
+   Education Section
+   ====================================================== */
+.education-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 24px 60px;
+  border-top: 1px solid var(--section-divider);
+  text-align: center;
+}
+
+.education-section h2 {
+  margin-bottom: 6px;
+}
+
+.edu-card {
+  background-color: #132020;
+  border-radius: var(--card-radius);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  border: 1px solid rgba(102,149,147,0.12);
+  padding: 32px 28px 24px 28px;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+  transition: box-shadow 0.25s, background 0.4s;
+}
+
+body.light .edu-card {
+  background-color: #f0eeeb;
+  border: 1px solid rgba(151,173,187,0.2);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.edu-header {
+  margin-bottom: 18px;
+}
+.edu-school {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #a6d2d0;
+  margin-bottom: 4px;
+}
+body.light .edu-school {
+  color: #4e6f82;
+}
+.edu-degree {
+  display: block;
+  font-size: 16px;
+  color: #669593;
+  margin-bottom: 8px;
+}
+body.light .edu-degree {
+  color: #69889D;
+}
+.edu-activities-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #688a89;
+  margin-bottom: 4px;
+  display: block;
+}
+body.light .edu-activities-title {
+  color: #97ADBB;
+}
+.edu-activities ul {
+  margin: 8px 0 0 18px;
+  padding: 0;
+}
+.edu-activities li {
+  font-size: 14px;
+  color: #8eaead;
+  margin-bottom: 4px;
+  list-style: disc;
+}
+body.light .edu-activities li {
+  color: #5a7a8a;
+}
+
+@media (max-width: 768px) {
+  .education-section {
+    padding: 60px 10px 40px;
+  }
+  .edu-card {
+    padding: 20px 10px 16px 10px;
+    max-width: 98vw;
+  }
+  .edu-school {
+    font-size: 17px;
+  }
+  .edu-degree {
+    font-size: 14px;
+  }
+}
 /* ------------------- Default -------------------------- */
 body {
   font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;

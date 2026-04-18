@@ -18,9 +18,10 @@ const Header = ({ toggleTheme, currentTheme }) => {
   const navLinks = [
     { label: 'Home',       id: 'home' },
     { label: 'About Me',   id: 'about-me' },
+    { label: 'Education',  id: 'education' },
+    { label: 'Experience', id: 'experience' },
     { label: 'Skills',     id: 'skills' },
     { label: 'Projects',   id: 'projects' },
-    { label: 'Experience', id: 'experience' },
   ];
 
   return (

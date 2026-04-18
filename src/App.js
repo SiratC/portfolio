@@ -7,6 +7,7 @@ import About from './sections/About';
 import Tech from './sections/Tech';
 import Project from './sections/Project';
 import WorkExperience from './sections/WorkExperience';
+import Education from './sections/Education';
 import Footer from './sections/Footer';
 import LastUpdated from './sections/LastUpdated';
 
@@ -51,8 +52,9 @@ function App() {
 
       <Header toggleTheme={toggleTheme} currentTheme={theme} />
       <section id="home"><Home /></section>
-      <section id="about-me"><About /></section>
-      <section id="experience"><WorkExperience /></section>
+  <section id="about-me"><About /></section>
+  <section id="education"><Education /></section>
+  <section id="experience"><WorkExperience /></section>
       <section id="skills"><Tech /></section>
       <section id="projects"><Project /></section>
       <section id="footer"><Footer /></section>
